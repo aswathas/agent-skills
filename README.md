@@ -10,12 +10,13 @@
 | Skill | Install | What It Does |
 |-------|---------|-------------|
 | [🌿 deep-teach](./deep-teach) | `npx skills add aswathas/agent-skills@deep-teach -g` | Teaches any topic through 8 thinking frameworks + exam-ready answer |
+| [📖 project-chronicle](./project-chronicle) | `npx skills add aswathas/agent-skills@project-chronicle -g` | Documents a project's full history as you build it — decisions, dead ends, scope changes |
 
 ## Quick Install
 
 ```bash
-# Install all skills globally
 npx skills add aswathas/agent-skills@deep-teach -g
+npx skills add aswathas/agent-skills@project-chronicle -g
 ```
 
 ## What is a Claude Code Skill?
