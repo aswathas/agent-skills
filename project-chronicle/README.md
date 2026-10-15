@@ -282,7 +282,7 @@ PRs welcome.
 
 | Skill | What It Does |
 |-------|-------------|
-| [deep-teach](../deep-teach) | 8-lens concept decoder for exam prep and deep learning |
+| [deep-teach](../deep-teach) | 7-frame concept decoder for exam prep and deep learning |
 | `project-chronicle` | Project history, decisions, and dead ends ← **you are here** |
 
 ---

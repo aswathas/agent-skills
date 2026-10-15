@@ -9,7 +9,7 @@
 
 | Skill | Install | What It Does |
 |-------|---------|-------------|
-| [🌿 deep-teach](./deep-teach) | `npx skills add aswathas/agent-skills@deep-teach -g` | Teaches any topic through 8 thinking frameworks + exam-ready answer |
+| [🌿 deep-teach](./deep-teach) | `npx skills add aswathas/agent-skills@deep-teach -g` | Teaches any topic through 7 thinking frameworks + a memory technique, then an exam-ready answer |
 | [📖 project-chronicle](./project-chronicle) | `npx skills add aswathas/agent-skills@project-chronicle -g` | Documents a project's full history as you build it — decisions, dead ends, scope changes |
 
 ## Quick Install
