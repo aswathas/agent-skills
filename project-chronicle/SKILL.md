@@ -199,3 +199,59 @@ Prose, not bullet soup. A sentence that says why beats a list of nouns.
   complaint into a specification and present it as their requirement.
 - If a section would be empty because the beat has not happened, leave the file
   unwritten.
+
+## Diátaxis — what type each beat is
+
+A chronicle is a mixture, and knowing which mixture matters because each beat has
+a different reader arriving with a different question.
+
+| Beat | Type | The reader is asking |
+|---|---|---|
+| `01-problem` | Explanation | Why was this worth doing? |
+| `02-options` | Explanation | What else was possible, and why not? |
+| `03-decision` | Explanation | Why this, and what would reopen it? |
+| `04-plan` | Reference | What happens, in what order? |
+| `05-mvp` | Reference | What does it do, and what does it deliberately not? |
+| `06-verification` | Reference | What was actually measured? |
+| `07-retro` | Explanation | What would we do differently? |
+| `attempts/` | Explanation | What happened, and why did it fail? |
+| `decisions/` | Reference | What changed, superseding what? |
+
+**A chronicle is never a tutorial.** Do not turn these files into lessons. A
+tutorial walks a newcomer through a successful outcome; these files exist to
+explain a specific project that already happened, including where it went wrong.
+The temptation is to write `04-plan.md` as step-by-step instructions — resist it.
+It is a record of what was done and in what order, not instructions someone
+should follow.
+
+**A chronicle is never a how-to guide.** Do not add a numbered procedure for
+reproducing the work. The project's own README owns that; a chronicle that starts
+answering "how do I run this" is competing with it and will go stale differently.
+
+Three principles carry over from the framework and are worth stating because they
+are easy to get wrong here:
+
+- **Clarity** — say what happened before saying why it mattered. A reader who has
+  not seen any of this should not have to reconstruct the sequence from prose
+  ordering alone.
+- **Accuracy** — a claim about a past decision traces to something the user
+  actually said. This is already a ground rule above; it is restated here because
+  it is the principle most often violated in the name of good prose.
+- **User-centricity** — write for the reader of that specific beat. `01-problem`
+  is read by someone deciding whether this project is worth their time;
+  `06-verification` is read by someone deciding whether to trust it. Same project,
+  different question, different opening.
+
+### What is deliberately not imported
+
+The Diátaxis workflow asks you to clarify the audience and goal, propose an
+outline, and wait for approval before writing. That contradicts this skill's
+ground rules: a beat is written the moment it happens and committed silently, and
+a decision made six months ago cannot wait for someone to approve an outline.
+
+Take the type system and the writing principles. Leave the approval gate. A
+chronicle that stops to ask permission is a chronicle that never finishes
+recording the thing it exists to record.
+
+When the two genuinely conflict — the reader's question is ambiguous — resolve it
+by writing for the reader named in the table above rather than by asking.

@@ -215,6 +215,38 @@ User states something consequential
 
 ---
 
+## Diátaxis: each beat has one reader
+
+The skill applies the [Diátaxis](https://diataxis.fr/) framework to decide what
+kind of document each beat is, because each one is read by someone with a
+different question:
+
+| Beat | Type | The reader is asking |
+|---|---|---|
+| `01-problem` | Explanation | Why was this worth doing? |
+| `02-options` | Explanation | What else was possible, and why not? |
+| `03-decision` | Explanation | Why this, and what would reopen it? |
+| `04-plan` | Reference | What happens, in what order? |
+| `05-mvp` | Reference | What does it do, and what deliberately not? |
+| `06-verification` | Reference | What was actually measured? |
+| `07-retro` | Explanation | What would we do differently? |
+| `attempts/` | Explanation | What happened, and why did it fail? |
+| `decisions/` | Reference | What changed, superseding what? |
+
+**A chronicle is never a tutorial, and never a how-to.** The temptation is to
+write `04-plan.md` as step-by-step instructions. Don't — it's a record of what was
+done and in what order, not something to reproduce. And no numbered "how do I run
+this" procedure belongs here at all: the project's own README owns that, and a
+chronicle that starts answering the question will go stale in a different way.
+
+What is **not** imported is Diátaxis's approval workflow. It asks you to clarify
+audience, propose an outline and wait for approval before writing. A beat is
+written the moment it happens and committed silently — and a decision made six
+months ago can't wait for someone to approve an outline. Take the type system and
+the writing principles; leave the approval gate.
+
+---
+
 ## Requirements
 
 - [Claude Code CLI](https://claude.ai/code)
