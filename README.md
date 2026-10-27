@@ -1,6 +1,6 @@
 # 🛠️ agent-skills
 
-> A collection of Claude Code CLI skills built for deep learning, exam prep, and knowledge work.
+> A collection of Claude Code CLI skills built for deep learning, exam prep, knowledge work, and audience growth.
 
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-CLI%20Skills-4a7c59?style=flat-square&logo=anthropic)](https://claude.ai/code)
 [![License: MIT](https://img.shields.io/badge/License-MIT-f9a620?style=flat-square)](LICENSE)
@@ -11,12 +11,14 @@
 |-------|---------|-------------|
 | [🌿 deep-teach](./deep-teach) | `npx skills add aswathas/agent-skills@deep-teach -g` | Teaches any topic through 7 thinking frameworks + a memory technique, then an exam-ready answer |
 | [📖 project-chronicle](./project-chronicle) | `npx skills add aswathas/agent-skills@project-chronicle -g` | Documents a project's full history as you build it — decisions, dead ends, scope changes |
+| [📈 linkedin-growth](./linkedin-growth) | `npx skills add aswathas/agent-skills@linkedin-growth -g` | LinkedIn growth system — voice, hooks, a publish gate, a follower roadmap, and a scheduler |
 
 ## Quick Install
 
 ```bash
 npx skills add aswathas/agent-skills@deep-teach -g
 npx skills add aswathas/agent-skills@project-chronicle -g
+npx skills add aswathas/agent-skills@linkedin-growth -g
 ```
 
 ## What is a Claude Code Skill?
