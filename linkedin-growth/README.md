@@ -139,8 +139,10 @@ linkedin-growth/
 │   ├── voice.md                ← derived from real published posts
 │   └── projects.md             ← the log that feeds the next post
 ├── cron/
-│   ├── daily-prompt.md         ← self-contained scheduled task
-│   └── apply.md                ← how to create / renew the job
+│   ├── ai-news-daily.md        ← the self-contained daily task
+│   └── apply.md                ← create / renew the job
+├── scripts/
+│   └── make-card.py            ← generates the 1200×1200 news card
 ├── drafts/                     ← unpublished, with gate scores
 └── posted/                     ← archive + URN + day-one numbers
 ```
@@ -160,8 +162,9 @@ postiee post "text" --mention "Name=urn:li:person:ID"          # real tag
 
 Two things the skill enforces:
 
-- **`--dry-run` before every publish.** It prints the escaped commentary and the
-  attachment, so the operator sees exactly what will go out.
+- **`--dry-run` before every publish, from a script file.** Nested quoting
+  through `wsl -e bash -lc '...'` can swallow the trailing flag into `--alt`; a
+  swallowed `--dry-run` publishes a real post. Write a `.sh` file and run it.
 - **No fake tags.** A mention only renders from little-text markup, and a
   member's URN cannot be looked up at self-serve access. Name the person and link
   their profile unless you have a real URN.
@@ -174,20 +177,31 @@ Two things the skill enforces:
 
 ```toml
 enabled      = true
-cron         = "0 9 * * 1-5"
-topics       = ["ai-news", "build-log", "oss-contribution", "teardown"]
-weights      = [0.4, 0.3, 0.2, 0.1]
+cron         = "0 9 * * *"
+topics       = ["ai-news"]
+weights      = [1.0]
 auto_publish = true
 max_per_day  = 1
+```
+
+The daily run: verify a story against its primary source, draft the take, gate
+it, generate a card, publish, archive. The image is not downloaded from the
+publisher — `scripts/make-card.py` renders a 1200×1200 card from the headline,
+so there is no licence to negotiate and no image API to fail at 09:00:
+
+```bash
+python scripts/make-card.py \
+  --headline "Anthropic open-sources a harness that runs agents for days" \
+  --source "Source: Anthropic" --kicker "GEN AI" --out card.png
 ```
 
 The job reads the file at run time, so changing **topics or weights** needs no
 reschedule. Changing **cron** does. `cron/apply.md` creates the job for Command
 Code (`cron_create`), Claude Code (`/loop` or an OS scheduler), or anything else
-that can run `cron/daily-prompt.md`.
+that can run `cron/ai-news-daily.md`.
 
 Guardrails baked into the prompt: one post per day, skip if today already has
-one, stop on an auth error, never retry a failed publish.
+one, verify before writing, stop on an auth error, never retry a failed publish.
 
 ---
 

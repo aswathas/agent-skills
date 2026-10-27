@@ -1,22 +1,21 @@
-# Read at run time by the scheduled job. Edit freely, then run
-# /linkedin-growth schedule apply only if `cron` changed.
+# Read at run time by the scheduled job.
+# Edit freely. Changing topics/weights needs no reschedule; changing `cron` does.
 
 enabled         = true
 
-# Five-field cron, local time. Weekdays at 09:00.
-cron            = "0 9 * * 1-5"
+# Daily at 09:00 local. Avoids :00 only when the time is approximate — this one
+# was named explicitly.
+cron            = "0 9 * * *"
 
-# Topic rotation. A run picks one by weight.
-topics          = ["ai-news", "build-log", "oss-contribution", "teardown"]
-weights         = [0.4, 0.3, 0.2, 0.1]
+topics          = ["ai-news"]
+weights         = [1.0]
 
 # true  = publish through postiee when the draft passes the gate
-# false = leave the draft in drafts/ and report it
+# false = leave the draft and card in drafts/ and report them
 auto_publish    = true
 
 visibility      = "PUBLIC"
 max_per_day     = 1
 use_project_log = true
 
-# Extra instruction appended to every scheduled run, in the account's voice.
-angle           = "practitioner. What this changes for someone running agents in production."
+angle           = "practitioner. What this changes for someone running agents in production, and what to check before believing the benchmark."

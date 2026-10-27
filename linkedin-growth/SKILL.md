@@ -87,13 +87,23 @@ without the raw detail — go get the numbers first.
 
 ### publish
 
+**On Windows, put the command in a `.sh` file and run the file.** Nested quoting
+through `wsl -e bash -lc '...'` can swallow the trailing flag into `--alt`; a
+swallowed `--dry-run` publishes a real post. The script form is the only form
+that has been reliable:
+
+```sh
+#!/usr/bin/env bash
+set -euo pipefail
+/home/aswath/.local/bin/postiee --agent post \
+  --file "C:/path/to/draft.md" \
+  --image "C:/path/to/card.png" \
+  --alt "one factual sentence" \
+  --dry-run
 ```
-wsl -e bash -lc '/home/aswath/.local/bin/postiee --agent post \
-  --file <windows-path-to-draft> \
-  [--pdf <windows-path-to.pdf>] \
-  [--title "carousel title"] \
-  [--image <path> --alt "..."]'
-```
+
+Then `wsl -e bash /mnt/c/path/to/publish.sh`. Remove the `--dry-run` line to
+publish for real.
 
 Rules:
 - `--dry-run` first and read the escaped commentary. Escaping is automatic;
